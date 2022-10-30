@@ -26,4 +26,6 @@ ac = new AsyncCaller(h);
 bool completedOK = ac.Invoke(5000, null, EventArgs.Empty);
 ```
 "Полусинхронного" в данном случае означает, что делегат будет вызван, и вызывающий поток будет ждать, пока вызов не выполнится.  Но если выполнение делегата займет больше 5000 миллисекунд, то ac.Invoke выйдет и вернет в completedOK значение false.
+# Результаты тестов:
+![image](https://user-images.githubusercontent.com/101508245/198897282-c05941b5-8b72-4533-90d9-0025f1998c29.png)
 
