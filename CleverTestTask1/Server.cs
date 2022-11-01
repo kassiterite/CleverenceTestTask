@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading;
 
 namespace CleverTestTask1
 {
@@ -11,9 +9,7 @@ namespace CleverTestTask1
         public static int GetCount()
         {
             if(Monitor.IsEntered(conch))
-            {
                 Monitor.Wait(conch);
-            }
             return _count;
         }
         public static void AddToCount(int value)
