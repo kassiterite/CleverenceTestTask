@@ -8,14 +8,13 @@ namespace CleverTestTask1
     {
         static int _count;
         static readonly object conch = new object();
-        static Func<int> readCount = new Func<int>(() => _count);
         public static int GetCount()
         {
             if(Monitor.IsEntered(conch))
             {
                 Monitor.Wait(conch);
             }
-            return Task.Run(new Func<int>(readCount)).Result;
+            return _count;
         }
         public static void AddToCount(int value)
         {
